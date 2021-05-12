@@ -86,7 +86,7 @@ function submitForm(e) {
     return;
   } else {
     // Save message
-    saveMessage(name, lastname, email, cyberSecurity, AI, AIinMed, BCworkshop, BSVworkshop, all);
+    saveMessage(name, lastname, email, cyberSecurity, AI, AIinMed, BCworkshop, SVworkshop, all);
 
     // Show alert
     document.querySelector('.bilgilendirme').style.display = 'block';
