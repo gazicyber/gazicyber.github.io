@@ -69,23 +69,24 @@ function submitForm(e) {
   // Get values
   var name = getInputVal('firstname');
   var lastname = getInputVal('lastname');
-  var phone = getInputVal('phone');
+  // var phone = getInputVal('phone');
   var email = getInputVal('email');
   var cyberSecurity = getChecked('cyberSecurity');
   var AI = getChecked('AI');
   var AIinMed = getChecked('AIinMed');
-  var workshop = getChecked('workshop');
+  var BCworkshop = getChecked('BCworkshop');
+  var SVworkshop = getChecked('SVworkshop');
   var all = getChecked('all');
 
   console.log(AI);
   console.log(typeof all);
 
-  if (cyberSecurity == false && AI == false && AIinMed == false && workshop == false && all == false) {
+  if (cyberSecurity == false && AI == false && AIinMed == false && BCworkshop == false && SVworkshop == false && all == false) {
     alert("Bir etkinlik seçmelisiniz.");
     return;
   } else {
     // Save message
-    saveMessage(name, lastname, phone, email, cyberSecurity, AI, AIinMed, workshop, all);
+    saveMessage(name, lastname, email, cyberSecurity, AI, AIinMed, BCworkshop, BSVworkshop, all);
 
     // Show alert
     document.querySelector('.bilgilendirme').style.display = 'block';
@@ -96,7 +97,7 @@ function submitForm(e) {
     }, 3000);
 
     // Clear form
-    //    document.getElementById('regForm').reset();
+    document.getElementById('regForm').reset();
   }
 
 
@@ -112,17 +113,17 @@ function getChecked(id) {
 }
 
 // Save message to firebase
-function saveMessage(name, lastname, phone, email, cyberSecurity, AI, AIinMed, workshop, all) {
+function saveMessage(name, lastname, email, cyberSecurity, AI, AIinMed, BCworkshop, SVworkshop, all) {
   var newMessageRef = messagesRef.push();
   newMessageRef.set({
     name: name,
     lastname: lastname,
-    phone: phone,
     email: email,
     cyberSecurity: cyberSecurity,
     AI: AI,
     AIinMed: AIinMed,
-    workshop: workshop,
+    BCworkshop: BCworkshop,
+    SVworkshop: SVworkshop,
     all: all
   });
 }
