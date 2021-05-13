@@ -20,6 +20,7 @@
     AOS.init();
   </script>-->
 
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
   <!-- stylesheets css -->
   <!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
@@ -112,6 +113,26 @@
     /*.accordionShit {
       width: fit-content;
     }*/
+
+    #muteBtn {
+      display: block;
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 10000;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      background-color: orange;
+      color: white;
+      cursor: pointer;
+      padding: 15px;
+      border-radius: 4px;
+    }
+
+    #muteBtn:hover {
+      background-color: #555;
+    }
   </style>
 
 
@@ -220,10 +241,27 @@
 
 
 
-
     function clickReg(id) {
       document.getElementById(id).style.display = "none";
       $(id).removeClass('show');
+    }
+
+    var isMuted = false;
+
+    function mute() {
+      if (isMuted == false) {
+        document.getElementById("bgVideo").muted = true;
+        $('#muteItem').removeClass('fas fa-volume-up');
+        $('#muteItem').addClass('fas fa-volume-mute');
+        isMuted = true;
+      } else if (isMuted == true) {
+        document.getElementById("bgVideo").muted = false;
+        $('#muteItem').removeClass('fas fa-volume-mute');
+        $('#muteItem').addClass('fas fa-volume-up');
+        isMuted = false;
+      } else {
+        alert("Bu buton şuanda kullanılamıyor");
+      }
     }
   </script>
 
@@ -244,7 +282,7 @@
 
 
 
-
+  <button onClick="mute()" id="muteBtn" title="mute"><i id="muteItem" class="fas fa-volume-up"></i></button>
 
 
 
@@ -261,7 +299,8 @@
       <div class="row">
 
         <div class="full-screen">
-          <video src="G-Force Days'21 Yapay Zeka ve Siber Güvenlik Zirvesi Çok Yakında Sizlerle....mp4" autoplay muted loop></video>
+          <video id="bgVideo" src="G-Force Days'21 Yapay Zeka ve Siber Güvenlik Zirvesi Çok Yakında Sizlerle....mp4"
+            autoplay loop></video>
           <div class="col-md-8 col-sm-12">
             <h1 class="wow fadeInUp" data-wow-delay="0.6s">GaziCyber</h1>
             <p class="wow fadeInUp text-center" data-wow-delay="1.0s">Gazi Üniversitesi Mühendislik Fakültesi Siber
@@ -3030,7 +3069,7 @@
       <div class="card">
         <header class="card-header">
           <!--<a href="" class="float-right btn btn-outline-primary mt-1">Log in</a>-->
-          <h4 class="card-title mt-2 text-center" style="color:black;">G-Force 2021</h4>
+          <h4 class="card-title mt-2 text-center" style="color:black;">G-Force Days'21</h4>
         </header>
         <article class="card-body">
           <form id="regForm">
@@ -3123,7 +3162,7 @@
 
 
   <div id="sponsors" style="margin-top: 60px;">
-    <h2 class="text-center" style="margin-top:100px;">Destekçilerimiz</h2>
+    <h2 class="text-center" style="margin-top:100px;">Destekçilerimiz!</h2>
     <div class="container">
       <div class="row" style="margin-top: 60px;">
         <div class="col-md-4 col-sm-12 text-center" style="margin-top:30px;">
@@ -3181,7 +3220,8 @@
       <div class="row">
         <div class="col-md-4 col-sm-12 text-center" style="margin-top:30px;">
           <a href="https://www.siberkume.org.tr/Index" target="_blank">
-            <img src="img/sponsors/Supporter/tsgk.png" width="215px" height="160px" alt="Türkiye Siber Güvenlik Kümelenmesi">
+            <img src="img/sponsors/Supporter/tsgk.png" width="215px" height="160px"
+              alt="Türkiye Siber Güvenlik Kümelenmesi">
           </a>
         </div>
         <div class="col-md-4 col-sm-12 text-center justify-content-center" style="margin-top:30px;">
@@ -3199,7 +3239,8 @@
       <div class="row">
         <div class="col-md-6 col-sm-12 text-center" style="margin-top:85px;">
           <a href="https://istanbulblockchainwomen.org/homepage/" target="_blank">
-            <img src="img/sponsors/Supporter/blockchainwomen.png" width="160" height="160px" alt="BlockChain Women İstanbul">
+            <img src="img/sponsors/Supporter/blockchainwomen.png" width="160" height="160px"
+              alt="BlockChain Women İstanbul">
           </a>
         </div>
         <div class="col-md-6 col-sm-12 text-center justify-content-center" style="margin-top:30px;">
