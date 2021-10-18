@@ -1,4 +1,11 @@
+<IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteCond %{HTTP_HOST} ^gazicyber\.com [NC]
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} ^(www\.)?gazicyber\.com$ [NC]
+RewriteRule ^(.*)$ https://gazicyber.com/$1 [L,R=301]
+</IfModule>
+RewriteEngine On
+RewriteCond %{HTTP_HOST} gazicyber\.com [NC]
 RewriteCond %{SERVER_PORT} 80
-RewriteRule ^(.*)$ https://www.gazicyber.com/$1 [R,L]
+RewriteRule ^(.*)$ https://gazicyber.com/$1 [R,L]
+
