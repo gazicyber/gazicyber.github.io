@@ -1,0 +1,45 @@
+.activityItem {
+    transition: 0.4s;
+    color: #EEA200;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 0 10px;
+    margin: 0 10px;
+}
+
+.activityItem:hover {
+    background-color: #FF5F21;
+    color: #ffffff;
+    padding: 24px 10px;
+}
+
+.activityItem:hover h4 {
+    color: #EEA200;
+}
+
+.etkinlik {
+    width: 80%;
+    font-family: sans-serif;
+    text-transform: none;
+    font-weight: 500;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column-reverse;
+    color: white;
+    padding: 10px 35px;
+    background-color: #414269;
+    border: 1px solid #414269;
+    border-radius: 3px;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.social,
+a {
+    color: #0d6efd;
+}
+
+.social, a:hover {
+    color:#FF5F21;
+}
